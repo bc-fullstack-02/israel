@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json()); ///comando que aparece as informações no terminal
 
 
-app.use("/auth", authController);
+app.use("/auth", authenticateMiddleware, authController);
 app.use("/admin", AdminController);
 
 app.listen(3001, () => {
