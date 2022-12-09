@@ -6,12 +6,14 @@ const authenticateMiddleware = require ("./middleware/authenticate");
 
 const app = express();
 
+
+
 app.use(express.json()); ///comando que aparece as informações no terminal
 
 
 app.use("/auth", authController);
-app.use("/admin", authenticateMiddleware, AdminController);
+app.use("/admin", AdminController);
 
 app.listen(3001, () => {
-    console.log('Server is running');
+    console.log('Server is running'); 
 });

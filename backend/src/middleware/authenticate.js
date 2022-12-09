@@ -37,8 +37,9 @@ module.exports = (req, res, next) => {
      
     req.userLogged = decoded;
 
-    return next(); 
-  })
+   return next(); 
+   
+   })
 
     
 }

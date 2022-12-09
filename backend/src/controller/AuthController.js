@@ -15,9 +15,9 @@ const generateToken = (user = {}) => {
     });
 }
 
-router.post("/register", async (req, res) => {
+router.post("/register", async (req, res) =>{ 
 
-    const {email} = req.body;
+    const {name, email, password} = req.body; 
     
     if(await UserModel.findOne({email})){
         return res.status(400).json({
@@ -30,12 +30,12 @@ router.post("/register", async (req, res) => {
 
     const user = await UserModel.create(req.body);
 
-    User.password = undefined;
+    user.password = undefined;
      
     return res.json({
         error: false,
         message:"Registred with sucess",
-        data: User
+        data: user
     });
 })
 
@@ -54,11 +54,11 @@ router.post("/autentica", async (req, res)=>{
 
     if(!await bcryptjs.compare(password, user.password)){
         return res.status(400).send({
-            error: true,
+            error: true, 
             message: "Invalid password" 
         })
     }
-
+ 
     user.password = undefined;
 
 
@@ -68,6 +68,8 @@ router.post("/autentica", async (req, res)=>{
 
    });
 })
+
+
 
 
 module.exports = router;
