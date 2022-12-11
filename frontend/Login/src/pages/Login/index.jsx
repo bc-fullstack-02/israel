@@ -2,21 +2,42 @@ import { Link } from 'react-router-dom'
 import { useState } from "react";
 import amazim from '../../assets/amazim.png';
 import { LayoutComponents } from '../../componentes/LayoutComponents';
-
+import { useCallback } from "react"
 
 
 
 export const Login = () => {
-
+    
+    
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const handleSubmit = useCallback(
+      (event) => {
+        event.preventDefault();
+        console.log(email, password);
+      }, 
+      [email, password]
+    );
+    const request = {
+      method: 'POST', 
+      body: JSON.stringify(handleSubmit)
+    }
+    const url = "http//localhost:3001/auth/autentica"
+
+    fetch(url, request)
+       .then(console.log("Gravando"))
+       .catch(erro => console.log(erro))
+
+
+
     return (
       <LayoutComponents>
-        <form className="login-form">
+        <form className="login-form" onSubmit={handleSubmit}>  
           <span className="login-form-title"> Bem vindo </span>
   
           <span className="login-form-title">
-            <img src={amazim} alt="Jovem Programador" />
+            <img src={amazim} alt="#" />
           </span>
   
           <div className="wrap-input">
@@ -54,3 +75,4 @@ export const Login = () => {
 
     )
 }
+export default Login;

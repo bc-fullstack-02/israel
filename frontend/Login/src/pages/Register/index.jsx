@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { LayoutComponents } from "../../componentes/LayoutComponents/index"
-import { useCallback } from "react"
+
 
 import amazim from '../../assets/amazim.png'
 
@@ -11,32 +11,10 @@ export const Register = () => {
   const [name, setName] = useState("")
 
 
-const handleSubmit = useCallback(
-  (event) => {
-    event.preventDefault();
-    console.log(name, email, password);
-  },
-  [name, email, password]
-);
-
-
-
-fetch('http://localhost:3001/auth/register')
-.then(data => {
-return data.json();
-})
-.then(post => {
-console.log(post.register);
-});
-
-
-
-
-
 
   return (
     <LayoutComponents >
-      <form className="login-form" onSubmit={handleSubmit}>
+      <form className="login-form">
         <span className="login-form-title"> Criar Conta </span>
 
         <span className="login-form-title">
@@ -74,8 +52,9 @@ console.log(post.register);
         </div>
 
         <div className="container-login-form-btn">
-          <button className="login-form-btn">Login</button>
+          <button className="login-form-btn">Cadastrar</button>
         </div>
+        
 
         <div className="text-center">
           <span className="txt1">Já possui conta? </span>
