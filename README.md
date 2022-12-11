@@ -28,6 +28,7 @@
 + React
 + Nodejs
 + MongoDB
++ Swagger para documentação da API
 
 ## Como rodar aplicação:
 
