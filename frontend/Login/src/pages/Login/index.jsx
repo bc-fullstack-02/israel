@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from "react";
 import amazim from '../../assets/amazim.png';
 import { LayoutComponents } from '../../componentes/LayoutComponents';
@@ -7,7 +7,6 @@ import { useCallback } from "react"
 
 
 export const Login = () => {
-    
     
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -28,6 +27,7 @@ export const Login = () => {
     fetch(url, request)
        .then(console.log("Gravando"))
        .catch(erro => console.log(erro))
+      
 
 
 
