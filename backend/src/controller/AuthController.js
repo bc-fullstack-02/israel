@@ -6,6 +6,7 @@ const UserModel = require("../models/User");
 
 const router = express.Router();
 
+
 const generateToken = (user = {}) => {
     return jwt.sign({
         id: user.id,

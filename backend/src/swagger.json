@@ -1,0 +1,68 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API da Rede social Amazonas",
+        "description": "Essa API tem como objetivo de registrar o usurio",
+        "termsOfService": "http://localhost:3001",
+        "contact": {
+            "email": "vitor1914@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3001/auth",
+            "description": "API inicial"
+        },
+        {
+            "url": "http://localhost:3001/auth/register",
+            "description": "API de registro de usuario"
+        },
+        {
+            "url": "http://localhost:3001/auth/autentica",
+            "description": "API de autenticação de usuario"
+        },
+        {
+            "url": "http://localhost:3001/auth/admin",
+            "description": "API de validação de usurio"
+        }
+    ],
+    "paths": {
+        "/register": {
+            "post": {
+                "sumary": "Cadastro de usuario",
+                "description": "Essa rota registra usuario novo",
+                "tags": [
+                    "register"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/register"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "register": {
+                "type": "register",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
