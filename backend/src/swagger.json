@@ -3,7 +3,7 @@
     "info": {
         "title": "API da Rede social Amazonas",
         "description": "Essa API tem como objetivo de registrar o usurio",
-        "termsOfService": "http://localhost:3001",
+        "termsOfService": "http://localhost:3001/auth",
         "contact": {
             "email": "vitor1914@gmail.com"
         },
@@ -39,9 +39,11 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/register"
+                                "$ref": "#/components/schemas/register" 
                             }
                         }
+
+ 
                     }
                 }
             }
@@ -60,7 +62,7 @@
                     },
                     "password": {
                         "type": "string"
-                    }
+                    } 
                 }
             }
         }
