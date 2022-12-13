@@ -37,7 +37,7 @@
 + 4 - servidor backend funcionando.
 
 ### Executando as Rotas backend:
-+ 1 - No postman, nos iremos executar as devidas rotas para execução do backend.
++ 1 - No VsCode, Iremos executar as rotas do backend usando a ferramenta POSTMAN para execução.
 + 2 - com o comando POST no postman, iremos executar a rota abaixo.
 
    * http://localhost:3001/auth/register
